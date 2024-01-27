@@ -1,13 +1,41 @@
-﻿namespace Homework1;
+﻿namespace Homework2a;
 
 class Program
 {
-    static void Main(string[] args)
+    static void Main()
     {
-        double x = 2.5;
-        double y = 3.3;
-        double z = 4*x*x + 3*y;
+        Console.Write("Enter a letter grade (A,B,C,D,F): ");
+        char lettergrade = char.ToUpper(Console.ReadKey().KeyChar);
+        Console.WriteLine();
 
-        Console.WriteLine(z);
+        int gpaPoints = 0;
+
+        if (lettergrade == 'A')
+        {
+            gpaPoints = 4;
+        }
+        else if (lettergrade == 'B')
+        {
+            gpaPoints = 3;
+        }
+         else if (lettergrade == 'C')
+        {
+            gpaPoints = 2;
+        }
+         else if (lettergrade == 'D')
+        {
+            gpaPoints = 1;
+        }
+         else if (lettergrade == 'F')
+        {
+            gpaPoints = 0;
+        }
+        else
+        {
+            Console.WriteLine("Wrong Letter Grade! ");
+            return;
+        }
+        Console.WriteLine($"GPA Points for {lettergrade}: {gpaPoints}");
     }
+    
 }
