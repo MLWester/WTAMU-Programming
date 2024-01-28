@@ -1,41 +1,33 @@
-﻿namespace Homework2a;
+﻿namespace Homework2b;
 
 class Program
 {
     static void Main()
     {
-        Console.Write("Enter a letter grade (A,B,C,D,F): ");
-        char lettergrade = char.ToUpper(Console.ReadKey().KeyChar);
-        Console.WriteLine();
+        Console.Write("Please input the first number: ");
+        int num1 = Convert.ToInt16(Console.ReadLine());
+        
+        Console.Write("Please input the second number: ");
+        int num2 = Convert.ToInt16(Console.ReadLine());
+        
+        Console.Write("Please input the third number: ");
+        int num3 = Convert.ToInt16(Console.ReadLine());
+        
+        int smallest;
 
-        int gpaPoints = 0;
-
-        if (lettergrade == 'A')
+        if (num1 <= num2 && num1 <= num3)
         {
-            gpaPoints = 4;
+            smallest = num1;
         }
-        else if (lettergrade == 'B')
+        else if (num2 <= num1 && num2 <= num3)
         {
-            gpaPoints = 3;
-        }
-         else if (lettergrade == 'C')
-        {
-            gpaPoints = 2;
-        }
-         else if (lettergrade == 'D')
-        {
-            gpaPoints = 1;
-        }
-         else if (lettergrade == 'F')
-        {
-            gpaPoints = 0;
+            smallest = num2;
         }
         else
         {
-            Console.WriteLine("Wrong Letter Grade! ");
-            return;
+            smallest = num3;
         }
-        Console.WriteLine($"GPA Points for {lettergrade}: {gpaPoints}");
+
+        Console.WriteLine($"The smallest number is: {smallest}");
     }
-    
 }
