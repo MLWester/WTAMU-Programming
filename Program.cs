@@ -4,30 +4,16 @@ class Program
 {
     static void Main()
     {
-        Console.Write("Please input the first number: ");
-        int num1 = Convert.ToInt16(Console.ReadLine());
-        
-        Console.Write("Please input the second number: ");
-        int num2 = Convert.ToInt16(Console.ReadLine());
-        
-        Console.Write("Please input the third number: ");
-        int num3 = Convert.ToInt16(Console.ReadLine());
-        
-        int smallest;
+        Console.Write("Enter a year: ");
+        int year = Convert.ToInt32(Console.ReadLine());
 
-        if (num1 <= num2 && num1 <= num3)
+        if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))
         {
-            smallest = num1;
-        }
-        else if (num2 <= num1 && num2 <= num3)
-        {
-            smallest = num2;
+            Console.WriteLine($"{year} is a leap year.");
         }
         else
         {
-            smallest = num3;
+            Console.WriteLine($"{year} is not a leap year.");
         }
-
-        Console.WriteLine($"The smallest number is: {smallest}");
     }
 }
