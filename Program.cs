@@ -1,40 +1,36 @@
-﻿namespace Homework3a;
+﻿namespace Homework3b;
 
 class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Enter a number: ");
+        Console.WriteLine("Enter a number (N): ");
 
         string input = Console.ReadLine();
 
-        if (int.TryParse(input, out int number))
+        if (int.TryParse(input, out int N))
         {
-            if (IsPrime(number))
-            {
-                Console.WriteLine($"{number} is prime.");
-            }
-            else
-            {
-                Console.WriteLine($"{number} is not prime.");
-            }
+            PrintSquarePattern(N);
+        }
+        else
+        {
+            Console.WriteLine("Invalid Input");
         }
     }
-    static bool IsPrime(int n)
+    static void PrintSquarePattern(int N)
     {
-        if (n <= 1)
-        {
-            return false;
-        }
 
-        for (int i = 2; i < n; i++)
+
+        for (int i = 1; i <= N; i++)
         {
-            if (n % i == 0)
+            for (int j = 1; j <= N; j++)
             {
-                return false; 
+               
+                Console.Write("#");
             }
-        }
 
-        return true; 
+            
+            Console.WriteLine();
+        }
     }
 }
