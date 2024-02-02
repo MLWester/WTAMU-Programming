@@ -1,19 +1,40 @@
-﻿namespace Homework2b;
+﻿namespace Homework3a;
 
 class Program
 {
-    static void Main()
+    static void Main(string[] args)
     {
-        Console.Write("Enter a year: ");
-        int year = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Enter a number: ");
 
-        if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))
+        string input = Console.ReadLine();
+
+        if (int.TryParse(input, out int number))
         {
-            Console.WriteLine($"{year} is a leap year.");
+            if (IsPrime(number))
+            {
+                Console.WriteLine($"{number} is prime.");
+            }
+            else
+            {
+                Console.WriteLine($"{number} is not prime.");
+            }
         }
-        else
+    }
+    static bool IsPrime(int n)
+    {
+        if (n <= 1)
         {
-            Console.WriteLine($"{year} is not a leap year.");
+            return false;
         }
+
+        for (int i = 2; i < n; i++)
+        {
+            if (n % i == 0)
+            {
+                return false; 
+            }
+        }
+
+        return true; 
     }
 }
