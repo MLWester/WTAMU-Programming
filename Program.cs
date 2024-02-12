@@ -1,32 +1,22 @@
-﻿namespace Homework3c;
+﻿namespace Homework4a;
 
 class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Enter a number: ");
+        Console.Write("Enter the first number: ");
+        int num1 = Convert.ToInt32(Console.ReadLine());
 
-        string input = Console.ReadLine();
+        Console.Write("Enter the second number: ");
+        int num2 = Convert.ToInt32(Console.ReadLine());
 
-        if (int.TryParse(input, out int numRows))
-        {
-            PrintPattern(numRows);
-        }
-        else
-        {
-            Console.WriteLine("Invalid Input");
-        }
+        int largestNumber = FindLargest(num1, num2);
+        
+        Console.WriteLine($"The largest number is: {largestNumber}");
     }
-     static void PrintPattern(int numRows)
-    {
-        for (int i = 1; i <= numRows; i++)
-        {
-            for (int j = 1; j <= i; j++)
-            {
-                Console.Write("*");
-            }
 
-            Console.WriteLine();
-        }
+    static int FindLargest(int num1, int num2)
+    {
+        return num1 > num2 ? num1 : num2;
     }
 }
