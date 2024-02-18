@@ -1,47 +1,21 @@
-﻿namespace Homework4b;
+﻿namespace Homework5a;
 
 class Program
 {
-    static void PrintTriangle(int N, string shape)
-    {
-        Console.WriteLine($"N = {N}, Shape = {shape}");
-
-        if (shape == "left")
-        {
-            for (int i = 1; i <= N; i++)
-            {
-                for (int j = 1; j <= i; j++)
-                {
-                    Console.Write("*");
-                }
-                Console.WriteLine();
-            }
-        }
-        else if (shape == "right")
-        {
-            for (int i = 1; i <= N; i++)
-            {
-                for (int j = 1; j <= N - i; j++)
-                {
-                    Console.Write(" ");
-                }
-                for (int k = 1; k <= i; k++)
-                {
-                    Console.Write("*");
-                }
-                Console.WriteLine();
-            }
-        }
-        else
-        {
-            Console.WriteLine("Invalid shape. Please enter 'left' or 'right'.");
-        }
-    }
-
     static void Main(string[] args)
     {
-        PrintTriangle(5, "left");
-        Console.WriteLine();
-        PrintTriangle(5, "right");
+        Console.WriteLine("Enter the first integer:");
+        int num1 = int.Parse(Console.ReadLine());
+
+        Console.WriteLine("Enter the second integer:");
+        int num2 = int.Parse(Console.ReadLine());
+
+        int largest = GetLargest(num1, num2);
+        Console.WriteLine("The largest number is: " + largest);
+    }
+
+    static int GetLargest(int num1, int num2)
+    {
+        return Math.Max(num1, num2);
     }
 }
